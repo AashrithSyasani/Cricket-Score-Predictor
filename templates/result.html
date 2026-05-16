@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: 'Segoe UI', sans-serif;
+
+            background: linear-gradient(135deg, #6c5ce7, #00cec9);
+
+            color: #fff;
+
+            text-align: center;
+
+            margin: 0;
+            padding: 0;
+
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        .container {
+
+            background: rgba(0, 0, 0, 0.65);
+
+            padding: 35px;
+
+            width: 420px;
+
+            border-radius: 15px;
+
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+        }
+
+        p {
+
+            font-size: 20px;
+
+            margin: 12px 0;
+        }
+
+        a {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 12px 20px;
+
+            background: linear-gradient(135deg, #00b894, #0984e3);
+
+            color: white;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+
+            background: linear-gradient(135deg, #55efc4, #74b9ff);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>📊 Prediction Result</h2>
+
+        {% if lower == upper %}
+
+            <p><strong>Innings Over.</strong></p>
+
+            <p>Final Score: {{ prediction }}</p>
+
+        {% else %}
+
+            <p><strong>Predicted Final Score:</strong></p>
+
+            <p>{{ prediction }}</p>
+
+            <p><strong>Range:</strong> {{ lower }} – {{ upper }}</p>
+
+        {% endif %}
+
+        <a href="/">🔄 Predict Again</a>
+
+    </div>
+
+</body>
+
+</html>
